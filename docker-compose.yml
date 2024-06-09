@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+        web:
+                image: node:18.20.2
+                restart: always
+                working_dir: /home/site
+                ports:
+                        - 80:3000
+                volumes:
+                        - .:/home/site
+                command: "bash -c 'npm install && npm start'"
+
+        site:
+                image: mysql:5.7
+                restart: always
+                environment:
+                        MYSQL_USER: root
+                        MYSQL_PASSWORD: suasenha
+                        MYSQL_DATABASE: users
+                        MYSQL_ROOT_PASSWORD: suasenha
+                ports:
+                        - "3306:3306"
+                volumes:
+                        - db_data:/var/lib/mysql
+
+volumes:
+        db_data:

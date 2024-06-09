@@ -1,0 +1,17 @@
+{
+  "name": "projeto",
+  "version": "1.0.0",
+  "description": "Projeto com páginas de login e cadastro usando Express.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv-cli": "3.0.0",
+    "mysql2": "^3.9.8",
+    "express": "^4.17.1"
+  }
+}
